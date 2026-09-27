@@ -1,10 +1,10 @@
 "use client";
 
-import { Button } from "@/src/components/ui/button";
+import { Button } from "@/components/ui/button";
 
 export const SiteHeader = () => {
   return (
-    <header className="border-b">
+    <header className="border-b bg-white">
         <div className="flex items-center justify-between w-full p-5">
 
             <div className="flex flex-col justify-center items-center gap-2">

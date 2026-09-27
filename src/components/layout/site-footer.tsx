@@ -5,7 +5,7 @@ import { SiFacebook } from "react-icons/si";                 // Simple Icons bra
 export const SiteFooter = () => {
   return (
     <footer className="border-t">
-      <div className="flex items-center justify-between w-full p-5">
+      <div className="flex items-center justify-between w-full p-5 bg-white">
         <p className="text-sm text-muted-foreground">
           &copy; 2025 Los Tres Gudinos. All rights reserved.
         </p>
