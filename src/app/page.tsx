@@ -1,6 +1,6 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 
 import { ComparisonSlider } from "@/components/comparison-slider";
 import { BrickSection } from "@/components/brick-section";
@@ -10,71 +10,79 @@ import { HoursTable } from "@/components/hours-table";
 import { FeatureBar } from "@/components/feature-bar";
 
 export default function Home() {
-    
+
   return (
     <div>
         {/* Title */}
-        <div className="w-full min-h-svh bg-white/0 flex flex-col justify-center items-center text-white" id="title">
-            <div className="text-5xl font-bold font-khand">LOS TRES GUDINOS</div>
-            <div className="text-2xl">CONSTRUCTING YOUR FUTURE</div>
+        <div className="page-container min-h-svh flex flex-col justify-center items-center gap-4 text-center text-white" id="title">
+            <div className="text-5xl md:text-7xl font-bold font-khand">LOS TRES GUDINOS</div>
+            <div className="text-xl md:text-2xl">CONSTRUCTING YOUR FUTURE</div>
         </div>
 
         <FeatureBar />
 
         {/* Projects Section */}
-        <div className="w-full bg-slate-800"  id="projects">
-            <div className="flex justify-around w-full">
-                <h1 className="text-3xl font-bold p-5 text-white font-khand">Our Past Projects</h1>
-            </div>
+        <section className="bg-slate-800 pb-16 md:pb-24" id="projects">
+            <div className="page-container">
+                <h2 className="section-title text-white">Our Past Projects</h2>
 
-            <div className="flex flex-row justify-around">
-                <ComparisonSlider beforeFileName="/construction-projects/garage-facade-before" afterFileName="/construction-projects/garage-facade-after" />
-                <ComparisonSlider beforeFileName="/construction-projects/wall-crack-before" afterFileName="/construction-projects/wall-crack-after" />
+                <div className="grid gap-8 md:grid-cols-2">
+                    <ComparisonSlider beforeFileName="/construction-projects/garage-facade-before" afterFileName="/construction-projects/garage-facade-after" />
+                    <ComparisonSlider beforeFileName="/construction-projects/wall-crack-before" afterFileName="/construction-projects/wall-crack-after" />
+                    <ComparisonSlider beforeFileName="/construction-projects/shed-facade-before" afterFileName="/construction-projects/shed-facade-after" />
+                    <ComparisonSlider beforeFileName="/construction-projects/burnt-sign-before" afterFileName="/construction-projects/burnt-sign-after" />
+                    <ComparisonSlider beforeFileName="/construction-projects/concrete-fence-before" afterFileName="/construction-projects/concrete-fence-after" />
+                    <ComparisonSlider beforeFileName="/construction-projects/stone-platform-before" afterFileName="/construction-projects/stone-platform-after" />
+                </div>
             </div>
-        </div>
+        </section>
 
-        {/* Spacer */}
-        <div className="w-full h-[100px] bg-slate-800"></div>
-        
         <BrickSection id="services">
             <ServicesCard />
         </BrickSection>
 
-        {/* Spacer */}
-        <div className="w-full h-[100px] bg-white/0"></div>
-        
-        <div className="flex flex-col justify-center items-center w-full p-5" id="about">
-            <h1 className="text-white text-3xl font-bold font-khand p-5"> About our business </h1>
-            <div className="flex flex-row justify-around w-full">
-                <Card className="flex flex-col justify-center items-center w-[550px] p-5 font-roboto">
-                    Established in 2005.
-                    <br />
-                    &emsp; Los Tres Gudinos Masonry Contractors was founded over 15 years ago by a father-and-family team with a passion for craftsmanship and a commitment to quality. Starting as a small operation in Houston, we focused on stone and brick installations, quickly earning a reputation for attention to detail and reliability. As our business grew, so did our services, expanding to include stucco, crack repairs, waterproofing, and custom outdoor projects. <br /> &emsp; Throughout the years, we've remained true to our core values of honesty, integrity, and exceptional craftsmanship. Today, Los Tres Gudinos is known for delivering beautiful, durable masonry work that enhances every property we touch. <br /> &emsp; We’re proud to be a family-owned business that treats every project with the care it deserves, continuing a tradition of excellence that has made us a trusted name in Houston.
-                </Card>
-                <div>
-                    CUSTOMER REVIEWS
+        <section className="section-y" id="about">
+            <div className="page-container">
+                <h2 className="section-title text-white">About Our Business</h2>
+                <div className="grid gap-8 md:grid-cols-2">
+                    <Card>
+                        <CardContent className="space-y-4 font-roboto text-base">
+                            <p className="font-bold">Established in 2005.</p>
+                            <p><i>Los Tres Gudinos Masonry Contractors</i> was founded over 15 years ago by a father-and-family team with a passion for craftsmanship and a commitment to quality. Starting as a small operation in Houston, we focused on stone and brick installations, quickly earning a reputation for attention to detail and reliability. As our business grew, so did our services, expanding to include stucco, crack repairs, waterproofing, and custom outdoor projects.</p>
+                            <p>Throughout the years, we&apos;ve remained true to our core values of honesty, integrity, and exceptional craftsmanship. Today, Los Tres Gudinos is known for delivering beautiful, durable masonry work that enhances every property we touch.</p>
+                            <p>We’re proud to be a family-owned business that treats every project with the care it deserves, continuing a tradition of excellence that has made us a trusted name in Houston.</p>
+                        </CardContent>
+                    </Card>
+                    
+                    <Card>
+                        <CardContent className="space-y-4 font-roboto text-base">
+                            REVIEWS HERE
+                        </CardContent>
+                    </Card>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div className="w-full h-[250px] bg-stone-700" id="contact">
-            GET IN TOUCH
-        </div>
+        <section className="section-y bg-stone-700" id="contact">
+            <div className="page-container text-white">
+                GET IN TOUCH
+            </div>
+        </section>
 
         {/* Hours & Location */}
-        <div className="w-full bg-white py-16 md:py-24" id="hours">
-            <div className="flex justify-around w-full">
-                <h1 className="text-3xl font-bold p-5 font-khand">Location & Hours</h1>
-            </div>
+        <section className="section-y bg-white" id="hours">
+            <div className="page-container">
+                <h2 className="section-title">Location & Hours</h2>
 
-            <div className="flex flex-row items-center justify-around w-full">
-                <CoverageMap />
-                <div>
-                    <div>Hours of Operation</div>
-                    <HoursTable />
+                <div className="grid items-center gap-8 md:grid-cols-2">
+                    <CoverageMap />
+                    <div className="space-y-4">
+                        <h3 className="font-khand text-2xl font-bold">Hours of Operation</h3>
+                        <HoursTable />
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
   );
 }

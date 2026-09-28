@@ -33,7 +33,7 @@ export const HoursTable = () => {
                     </TableRow>
                     <TableRow>
                         <TableCell>Saturday</TableCell>
-                        <TableCell>Closed</TableCell>
+                        <TableCell>8:00 AM - 2:00 PM</TableCell>
                     </TableRow>
                     <TableRow>
                         <TableCell>Sunday</TableCell>

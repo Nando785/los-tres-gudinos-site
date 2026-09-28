@@ -199,7 +199,7 @@ export function BrickSection({
       className={cn(
         // z-10 puts the overhang above neighbouring sections;
         // isolate keeps the wall's -z-10 local, behind the content.
-        "relative isolate z-10 px-4 py-16",
+        "relative isolate z-10 section-y",
         className
       )}
       style={{
@@ -234,7 +234,7 @@ export function BrickSection({
         ))}
       </svg>
 
-      <div ref={contentRef} className={cn("relative mx-auto max-w-2xl", contentClassName)}>
+      <div ref={contentRef} className={cn("relative mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8", contentClassName)}>
         {children}
       </div>
     </section>

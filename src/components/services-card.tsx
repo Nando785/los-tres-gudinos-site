@@ -48,19 +48,19 @@ export const ServicesCard = () => {
             <CardHeader>
                 <CardTitle className="font-khand font-bold">OUR SERVICES</CardTitle>
             </CardHeader>
-            <CardContent className="grid grid-cols-2 gap-4 items-start">
+            <CardContent className="grid gap-4 items-start sm:grid-cols-2">
                 {services.map((item) => {
                    return (
                     <Collapsible key={item.name} className="group">
                         <CollapsibleTrigger asChild>
-                            <Button variant="outline">
+                            <Button variant="outline" className="w-full justify-between">
                                 <span>{item.name}</span>
                             <ChevronDown className="transition-transform group-data-[state=open]:rotate-180" />
                             </Button>
                         </CollapsibleTrigger>
 
                         <CollapsibleContent>
-                            <ul className="mt-2 space-y-1">
+                            <ul className="mt-2 space-y-1 px-4">
                                 {item.list.map((service) => (
                                     <li key={service}>{service}</li>
                                 ))}

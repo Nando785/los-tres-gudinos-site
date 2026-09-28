@@ -119,6 +119,19 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+/* Layout scale: content never grows past max-w-6xl; gutters and section rhythm are shared by every section. */
+@utility page-container {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+@utility section-y {
+  @apply py-16 md:py-24;
+}
+
+@utility section-title {
+  @apply mb-8 text-center font-khand text-3xl font-bold md:mb-12 md:text-4xl;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

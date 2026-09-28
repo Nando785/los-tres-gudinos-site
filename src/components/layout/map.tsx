@@ -40,7 +40,7 @@ export function CoverageMap() {
   });
 
   return (
-    <div className="relative h-[420px] w-lg">
+    <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl shadow-xl shadow-black/30">
       <Map
         ref={mapRef}
         center={[location.lat, location.lng]}

@@ -20,7 +20,7 @@ export const ComparisonSlider = ({ beforeFileName, afterFileName }: ComparisonSl
 
     return(
         <div 
-            className="relative w-full max-w-[600px] aspect-[16/10] overflow-hidden rounded-[12px] cursor-ew-resize select-none touch-none"
+            className="relative w-full aspect-16/10 overflow-hidden rounded-xl cursor-ew-resize select-none touch-none border-5 border-white"
             onPointerDown={(e) => {
                 e.currentTarget.setPointerCapture(e.pointerId);
                 updateFromPointer(e);
@@ -45,14 +45,14 @@ export const ComparisonSlider = ({ beforeFileName, afterFileName }: ComparisonSl
                 className="absolute inset-y-0 z-10 w-1 -translate-x-1/2 bg-white shadow-[0_0_10px_rgba(0,0,0,0.3)]"
                 style={{ left: `${position}%` }}
             >
-                <div className="absolute top-1/2 left-1/2 flex size-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-[1.2rem] text-[#333] shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
+                <div className="absolute top-1/2 left-1/2 flex size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white text-slate-800 shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
                     <ChevronLeft className="size-5"/><ChevronRight className="size-5"/>
                 </div>
             </div>
 
             {/* <!-- Optional labels --> */}
-            <span className="absolute top-3 left-3 z-20 bg-black/60 px-2 py-1 text-white rounded-2xl">Before</span>
-            <span className="absolute top-3 right-3 z-20 bg-black/60 px-2 py-1 text-white rounded-2xl">After</span>
+            <span className="absolute top-4 left-4 z-20 rounded-full bg-black/60 px-3 py-1 text-sm text-white">Before</span>
+            <span className="absolute top-4 right-4 z-20 rounded-full bg-black/60 px-3 py-1 text-sm text-white">After</span>
         </div>
     );
 }
