@@ -30,7 +30,7 @@ const area: GeoJSON.FeatureCollection = {
   ],
 };
 
-export function MyMap() {
+export function CoverageMap() {
   const mapRef = useRef<MapRef>(null);
   const location = {lat: -95.343755, lng: 29.867445};
   const selectedStyle = "https://tiles.openfreemap.org/styles/bright";
