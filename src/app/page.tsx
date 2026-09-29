@@ -8,6 +8,7 @@ import { ServicesCard } from "@/components/services-card";
 import { CoverageMap } from "@/components/layout/map";
 import { HoursTable } from "@/components/hours-table";
 import { FeatureBar } from "@/components/feature-bar";
+import { EmailCard } from "@/components/email-card";
 
 export default function Home() {
 
@@ -65,7 +66,8 @@ export default function Home() {
 
         <section className="section-y bg-stone-700" id="contact">
             <div className="page-container text-white">
-                GET IN TOUCH
+                <h2 className="section-title">Contact Us</h2>
+                <EmailCard />
             </div>
         </section>
 

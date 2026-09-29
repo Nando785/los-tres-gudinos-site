@@ -2,6 +2,7 @@ import { FaPhone } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { SiFacebook } from "react-icons/si";                 // Simple Icons brand logo
 
+const COMPANY_EMAIL = process.env.COMPANY_EMAIL;
 export const SiteFooter = () => {
   return (
     <footer className="border-t bg-white">
@@ -12,7 +13,7 @@ export const SiteFooter = () => {
 
         <div className="flex flex-col gap-4">
             <p className="flex items-center gap-2"><FaPhone className="size-5"/> 832-988-6550</p>
-            <p className="flex items-center gap-2"><MdEmail className="size-5"/> eduardogudino37@gmail.com</p>
+            <p className="flex items-center gap-2"><MdEmail className="size-5"/> {COMPANY_EMAIL}</p>
         </div>
 
         <div className="flex flex-col gap-4">
