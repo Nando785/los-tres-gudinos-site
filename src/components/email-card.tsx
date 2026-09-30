@@ -11,8 +11,7 @@ const fieldClass =
 const labelClass = "mb-1.5 block text-sm font-semibold";
 
 type Status = "idle" | "sending" | "sent" | "error";
-const COMPANY_EMAIL = process.env.NEXT_PUBLIC_COMPANY_EMAIL;
-export const EmailCard = () => {
+export const EmailCard = ({ companyEmail }: { companyEmail?: string }) => {
     const [status, setStatus] = useState<Status>("idle");
 
     async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -101,7 +100,7 @@ export const EmailCard = () => {
                     </li>
                     <li className="flex items-center gap-3">
                         <MdEmail className="size-5 shrink-0"/>
-                        <a href={`mailto:${COMPANY_EMAIL}`} className="break-all hover:underline">{COMPANY_EMAIL}</a>
+                        <a href={`mailto:${companyEmail}`} className="break-all hover:underline">{companyEmail}</a>
                     </li>
                     <li className="flex items-center gap-3">
                         <SiFacebook className="size-5 shrink-0"/>

@@ -1,5 +1,3 @@
-"use client";
-
 import { Card, CardContent } from "@/components/ui/card";
 
 import { ComparisonSlider } from "@/components/comparison-slider";
@@ -149,7 +147,7 @@ export default function Home() {
         <section className="section-y bg-stone-700" id="contact">
             <div className="page-container text-white">
                 <h2 className="section-title">Contact Us</h2>
-                <EmailCard />
+                <EmailCard companyEmail={process.env.COMPANY_EMAIL} />
             </div>
         </section>
 
