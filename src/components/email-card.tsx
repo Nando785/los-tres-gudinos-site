@@ -1,12 +1,14 @@
-"use-client";
+"use client";
 
 import { useState, type FormEvent } from "react";
 import { FaPhone, FaHome } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { SiFacebook } from "react-icons/si";
 
+// text-base keeps inputs at 16px so iOS doesn't zoom in on focus.
 const fieldClass =
-    "w-full rounded-md border border-white bg-white/20 px-3 py-2 text-white placeholder-white/70 outline-none focus:bg-white/30 focus:ring-2 focus:ring-white/60";
+    "w-full rounded-md border border-white/70 bg-white/20 px-3 py-2.5 text-base text-white placeholder-white/70 outline-none focus:bg-white/30 focus:ring-2 focus:ring-white/60";
+const labelClass = "mb-1.5 block text-sm font-semibold";
 
 type Status = "idle" | "sending" | "sent" | "error";
 const COMPANY_EMAIL = process.env.NEXT_PUBLIC_COMPANY_EMAIL;
@@ -34,81 +36,81 @@ export const EmailCard = () => {
     }
 
     return (
-        <section id="footer">
-            <div className="flex flex-row">
-                <div id="email-fields">
-                    <h2>Get in touch with us!</h2>
-                    <p>
-                        Send us an email directly using the form below, or through the contact information on the right. <br />
-                        Our area coverage and schedule are listed below for your convenience.
-                    </p>
-                    <form onSubmit={handleSubmit} noValidate={false}>
+        <div className="grid gap-10 md:grid-cols-5 lg:gap-16">
+            <div className="md:col-span-3">
+                <h3 className="block-title mb-2">Get in touch with us!</h3>
+                <p className="mb-6 text-white/80">
+                    Send us an email directly using the form below, or through the contact information listed here.
+                    Our area coverage and schedule are listed below for your convenience.
+                </p>
+                <form onSubmit={handleSubmit} noValidate={false} className="space-y-4">
+                    <div className="grid gap-4 sm:grid-cols-2">
                         <div>
-                            <div className="email-field">
-                                <label htmlFor="name">Name</label>
-                                <input type="text" name="name" id="name" required maxLength={100} className={fieldClass} />
-                            </div>
-                            <div className="email-field">
-                                <label htmlFor="email">Email</label>
-                                <input type="email" name="email" id="email" required className={fieldClass} />
-                            </div>
-                            <div className="email-field">
-                                <label htmlFor="message">Message</label>
-                                <textarea name="message" id="message" rows={4} required maxLength={5000} className={fieldClass}></textarea>
-                            </div>
-
-                            {/* Honeypot: invisible to people, bots tend to fill it in */}
-                            <input
-                                type="text"
-                                name="company"
-                                tabIndex={-1}
-                                autoComplete="off"
-                                aria-hidden="true"
-                                className="hidden"
-                            />
+                            <label htmlFor="name" className={labelClass}>Name</label>
+                            <input type="text" name="name" id="name" required maxLength={100} autoComplete="name" className={fieldClass} />
                         </div>
-                        <ul>
-                            <li>
-                                <button
-                                    type="submit"
-                                    disabled={status === "sending"}
-                                    className="bg-white text-gray-800 hover:bg-gray-200 focus:ring-2 focus:ring-blue-500 rounded p-1 disabled:opacity-60 disabled:cursor-not-allowed"
-                                >
-                                    {status === "sending" ? "Sending…" : "Send Message"}
-                                </button>
-                            </li>
-                        </ul>
+                        <div>
+                            <label htmlFor="email" className={labelClass}>Email</label>
+                            <input type="email" name="email" id="email" required autoComplete="email" className={fieldClass} />
+                        </div>
+                    </div>
+                    <div>
+                        <label htmlFor="message" className={labelClass}>Message</label>
+                        <textarea name="message" id="message" rows={5} required maxLength={5000} className={fieldClass}></textarea>
+                    </div>
 
-                        <p aria-live="polite" className="mt-2 text-sm">
-                            {status === "sent" && "Thanks! Your message was sent. We'll get back to you soon."}
-                            {status === "error" && "Sorry, something went wrong. Please call us or email us directly."}
-                        </p>
-                    </form>
-                </div>
+                    {/* Honeypot: invisible to people, bots tend to fill it in */}
+                    <input
+                        type="text"
+                        name="company"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        aria-hidden="true"
+                        className="hidden"
+                    />
 
-                <ul className="contact-info">
-                    <li className="flex flex-row items-center gap-2">
-                        <FaHome className="size-5" />
-                        Los Tres Gudinos - Masonry Contractor<br />
-                        10612 Woody Ln<br />
-                        Houston, TX 77093
+                    <button
+                        type="submit"
+                        disabled={status === "sending"}
+                        className="h-11 w-full rounded-md bg-white px-6 font-semibold text-stone-800 transition-colors hover:bg-stone-200 focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-stone-700 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                    >
+                        {status === "sending" ? "Sending…" : "Send Message"}
+                    </button>
+
+                    <p aria-live="polite" className="text-sm">
+                        {status === "sent" && "Thanks! Your message was sent. We'll get back to you soon."}
+                        {status === "error" && "Sorry, something went wrong. Please call us or email us directly."}
+                    </p>
+                </form>
+            </div>
+
+            <div className="md:col-span-2">
+                <h3 className="block-title mb-6">Contact Information</h3>
+                <ul className="space-y-5">
+                    <li className="flex items-start gap-3">
+                        <FaHome className="mt-1 size-5 shrink-0" />
+                        <span>
+                            Los Tres Gudinos - Masonry Contractor<br />
+                            10612 Woody Ln<br />
+                            Houston, TX 77093
+                        </span>
                     </li>
-                    <li className="flex flex-row items-center gap-2">
-                        <FaPhone className="size-5"/>
-                        <a href="tel:8329886550">(832) 988-6550</a>
+                    <li className="flex items-center gap-3">
+                        <FaPhone className="size-5 shrink-0"/>
+                        <a href="tel:8329886550" className="hover:underline">(832) 988-6550</a>
                     </li>
-                    <li className="flex flex-row items-center gap-2">
-                        <MdEmail className="size-5"/>
-                        <a href={`mailto:${COMPANY_EMAIL}`}>{COMPANY_EMAIL}</a>
+                    <li className="flex items-center gap-3">
+                        <MdEmail className="size-5 shrink-0"/>
+                        <a href={`mailto:${COMPANY_EMAIL}`} className="break-all hover:underline">{COMPANY_EMAIL}</a>
                     </li>
-                    <li className="flex flex-row items-center gap-2">
-                        <SiFacebook className="size-5"/>
-                        <a href="https://facebook.com/profile.php?id=100063528612566" target="_blank" rel="noopener noreferrer">
-                            facebook.com/profile.php?id=100063528612566
+                    <li className="flex items-center gap-3">
+                        <SiFacebook className="size-5 shrink-0"/>
+                        <a href="https://facebook.com/profile.php?id=100063528612566" target="_blank" rel="noopener noreferrer" className="hover:underline">
+                            Find us on Facebook
                         </a>
                     </li>
                 </ul>
             </div>
-        </section>
+        </div>
     );
 };

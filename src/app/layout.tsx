@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { Source_Sans_3, Roboto, Khand } from "next/font/google";
+import { Source_Sans_3, Khand } from "next/font/google";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 
@@ -10,11 +10,6 @@ const sans = Source_Sans_3({
     variable: "--font-sans",
     subsets: ["latin"],
     weight: ["300", "400", "700"],
-});
-
-const roboto = Roboto({
-    variable: "--font-roboto",
-    subsets: ["latin"],
 });
 
 const khand = Khand({
@@ -32,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className="scroll-smooth" data-scroll-behavior="smooth">
         {/* background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url(bg.jpg) center / cover fixed; */}
-      <body className={cn(sans.className, roboto.variable, khand.variable)}>
+      <body className={cn(sans.className, khand.variable)}>
         <SiteHeader />
         <main>{children}</main>
         <SiteFooter />

@@ -11,8 +11,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-// Requires: npx shadcn@latest add tabs badge select
-
 type Service = {
   name: string;
   list: string[];

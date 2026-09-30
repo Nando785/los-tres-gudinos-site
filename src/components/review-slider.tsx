@@ -88,16 +88,15 @@ export function ReviewSlider({
   if (reviews.length === 0) return null;
 
   return (
-    <section className={cn("mx-auto max-w-3xl px-4 py-12", className)}>
-      <h2 className="mb-8 text-center text-3xl font-semibold tracking-tight">
-        {title}
-      </h2>
+    <div className={cn("mx-auto w-full max-w-3xl", className)}>
+      <h3 className="block-title mb-6">{title}</h3>
 
       <Carousel
         setApi={setApi}
         plugins={plugins}
         opts={{ align: "start", loop: true }}
-        className="md:mx-2"
+        // Side padding leaves room for the arrows, which sit just outside the carousel.
+        className="md:mx-12"
       >
         <CarouselContent>
           {reviews.map((review, i) => (
@@ -129,7 +128,7 @@ export function ReviewSlider({
           ))}
         </div>
       )}
-    </section>
+    </div>
   );
 }
 
@@ -139,7 +138,7 @@ function ReviewCard({ review }: { review: Review }) {
       <CardContent className="flex h-full flex-col gap-4 p-6">
         {review.rating != null && <Stars rating={review.rating} />}
 
-        <blockquote className="flex flex-1 text-lg text-muted-foreground flex-row">
+        <blockquote className="flex-1 text-base leading-relaxed text-muted-foreground">
             “{review.text}”
         </blockquote>
 

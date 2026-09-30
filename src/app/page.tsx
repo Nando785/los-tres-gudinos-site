@@ -97,19 +97,19 @@ export default function Home() {
   return (
     <div>
         {/* Title */}
-        <div className="page-container min-h-svh flex flex-col justify-center items-center gap-4 text-center text-white" id="title">
-            <div className="text-5xl md:text-7xl font-bold font-khand">LOS TRES GUDINOS</div>
-            <div className="text-xl md:text-2xl">CONSTRUCTING YOUR FUTURE</div>
+        <div className="page-container flex min-h-[calc(100svh-4rem)] flex-col items-center justify-center gap-3 pb-24 text-center text-white md:gap-4" id="title">
+            <h1 className="font-khand text-5xl leading-none font-bold sm:text-6xl md:text-7xl lg:text-8xl">LOS TRES GUDINOS</h1>
+            <p className="text-lg tracking-widest sm:text-xl md:text-2xl">CONSTRUCTING YOUR FUTURE</p>
         </div>
 
         <FeatureBar />
 
         {/* Projects Section */}
-        <section className="bg-slate-800 pb-16 md:pb-24" id="projects">
+        <section className="section-y bg-slate-800" id="projects">
             <div className="page-container">
                 <h2 className="section-title text-white">Our Past Projects</h2>
 
-                <div className="grid gap-8 md:grid-cols-2">
+                <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
                     <ComparisonSlider beforeFileName="/construction-projects/garage-facade-before" afterFileName="/construction-projects/garage-facade-after" />
                     <ComparisonSlider beforeFileName="/construction-projects/wall-crack-before" afterFileName="/construction-projects/wall-crack-after" />
                     <ComparisonSlider beforeFileName="/construction-projects/shed-facade-before" afterFileName="/construction-projects/shed-facade-after" />
@@ -127,10 +127,10 @@ export default function Home() {
         <section className="section-y" id="about">
             <div className="page-container">
                 <h2 className="section-title text-white">About Our Business</h2>
-                <div className="grid gap-8 md:grid-cols-2">
+                <div className="grid gap-6 lg:grid-cols-2 lg:gap-8">
                     <Card>
-                        <CardContent className="space-y-4 font-roboto text-base">
-                            <p className="font-bold">Established in 2005.</p>
+                        <CardContent className="space-y-4 text-base leading-relaxed md:px-8">
+                            <h3 className="block-title">Established in 2005</h3>
                             <p><i>Los Tres Gudinos Masonry Contractors</i> was founded over 15 years ago by a father-and-family team with a passion for craftsmanship and a commitment to quality. Starting as a small operation in Houston, we focused on stone and brick installations, quickly earning a reputation for attention to detail and reliability. As our business grew, so did our services, expanding to include stucco, crack repairs, waterproofing, and custom outdoor projects.</p>
                             <p>Throughout the years, we&apos;ve remained true to our core values of honesty, integrity, and exceptional craftsmanship. Today, Los Tres Gudinos is known for delivering beautiful, durable masonry work that enhances every property we touch.</p>
                             <p>We’re proud to be a family-owned business that treats every project with the care it deserves, continuing a tradition of excellence that has made us a trusted name in Houston.</p>
@@ -138,7 +138,7 @@ export default function Home() {
                     </Card>
                     
                     <Card>
-                        <CardContent className="space-y-4 font-roboto text-base">
+                        <CardContent className="text-base md:px-8">
                             <ReviewSlider reviews={reviews} />
                         </CardContent>
                     </Card>
@@ -158,10 +158,10 @@ export default function Home() {
             <div className="page-container">
                 <h2 className="section-title">Location & Hours</h2>
 
-                <div className="grid items-center gap-8 md:grid-cols-2">
+                <div className="grid items-center gap-8 md:grid-cols-2 lg:gap-12">
                     <CoverageMap />
                     <div className="space-y-4">
-                        <h3 className="font-khand text-2xl font-bold">Hours of Operation</h3>
+                        <h3 className="block-title">Hours of Operation</h3>
                         <HoursTable />
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@
 export const HoursTable = () => {
     return (
         <div>
-            <Table>
+            <Table className="text-base">
                 <TableHeader>
                     <TableRow>
                         <TableHead>Day</TableHead>
