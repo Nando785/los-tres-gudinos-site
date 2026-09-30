@@ -4,13 +4,95 @@ import { Card, CardContent } from "@/components/ui/card";
 
 import { ComparisonSlider } from "@/components/comparison-slider";
 import { BrickSection } from "@/components/brick-section";
-import { ServicesCard } from "@/components/services-card";
 import { CoverageMap } from "@/components/layout/map";
 import { HoursTable } from "@/components/hours-table";
 import { FeatureBar } from "@/components/feature-bar";
 import { EmailCard } from "@/components/email-card";
+import { ServicesSection } from "@/components/services-section";
+import { Review, ReviewSlider } from "@/components/review-slider";
 
 export default function Home() {
+
+    const services = [
+        {
+            name: "Construction or Installation",
+            list: ["Driveway", "Interior Wall", "Retaining Wall", "Walkway or pathway", "Brick", "Concrete or cinder block", "Stamped Concrete", "Textured Concrete", "Exterior wall", "Patio, porch or terrace", "Steps", "Asphalt", "Concrete", "Gravel", "Stone"]
+        },
+        {
+            name: "Masonry/concrete removal",
+            list: []
+        },
+        {
+            name: "Masonry/Concrete Repair",
+            list: ["Driveway", "Interior Wall", "Retaining Wall", "Walkway or pathway", "Brick", "Concrete or cinder block", "Stamped Concrete", "Textured Concrete", "Exterior wall", "Patio, porch or terrace", "Steps", "Asphalt", "Concrete", "Gravel", "Stone"]
+        },
+        {
+            name: "Masonry/Concrete Sealing",
+            list: ["Driveway", "Interior wall", "Retaining wall", "Walkway or pathway", "Exterior wall", "Patio, porch or terrace", "Steps"]
+        },
+        {
+            name: "Masonry/Concrete Staining",
+            list: ["Driveway", "Interior wall", "Retaining wall", "Walkway or pathway", "Exterior wall", "Patio, porch or terrace", "Steps"]
+        },
+        {
+            name: "Construction Design Services",
+            list: ["Balcony", "New rooms", "Single-family home", "Deck", "Patio, porch or terrace", "Stairs"]
+        },
+        {
+            name: "Patio, Porch or Terrace Construction and Installation",
+            list: ["Asphalt", "Concrete", "Gravel", "Stone", "Brick", "Concrete or cinder block", "Stamped Concrete", "Textured Concrete"]
+        },
+        {
+            name: "Remodeling",
+            list: ["Bathroom", "Bedroom", "Common areas", "Kitchen", "Garage", "Laundry Room"]
+        },
+        {
+            name: "Structural Repair",
+            list: ["Beams or lintels", "Frame", "Posts", "Walls", "Foundation", "Joists", "Roof frame"]
+        },
+        {
+            name: "Miscellaneous",
+            list: ["Fireplace and firepit masonry", "Balcony addition", "Deck construction", "Single-family home construction", "Stairway addition"]
+        }
+    ];
+
+    const reviews: Review[] = [
+        {
+            name: "Bobby T.",                          // required
+            text: "Very Professional! Always on time. Built a small wall around the back of my house to help with water control, very satisfied with work and workers. Cleaned up everything when done. Looks great! Will use again on other projects.", // required
+            rating: 5,                                // optional, 1–5 stars
+            service: "Masonry/Concrete Repair",       // optional, shown as a small tag
+        },
+        {
+            name: "Annice I.",
+            text: "I am building a new residential house. This company saved me after another contractor left the project unfinished...they gave me a fair price and did an outstanding job!",
+            rating: 4,
+            service: "Residential Construction"
+        },
+        {
+            name: "Martin G.",
+            text: "Great work very efficient, completed my patio pavers in 2 days with an excellent result, good price provided for the overall work.",
+            rating: 5,
+            service: "Patio Construction and Installation",
+        },
+        {
+            name: "Misty G.",
+            text: "Professional, organized, and knowledgeable. Showed up early each day, took great care in protecting surrounding areas of our home to prevent any damage or unnecessary mess. The stone work looks fantastic, and we plan to use them again.",
+            rating: 5,
+            service: "Construction and Installation",
+        },
+        {
+            name: "Sandra H.",
+            text: "Mr. Eduardo and his crew were very professional. They were very early and finished my concrete patio within the time frame he told me. I recommend him for his great quality work. Very Satisfied.",
+            rating: 5,
+            service: "Patio Construction and Installation",
+        },
+        {
+            name: "Luisa J.",
+            text: "3 Gudinos were very professional. I had them built a brick patio. They explained the options and handled all details timely; including initial meeting and quote. When it came time to start the job everything was completed on schedule. They cleaned up after themselves and left everything in good shape. Payment was easy. I definitely recommend Los Tres Gudinos.",
+            rating: 5,
+        },
+    ];
 
   return (
     <div>
@@ -39,7 +121,7 @@ export default function Home() {
         </section>
 
         <BrickSection id="services">
-            <ServicesCard />
+            <ServicesSection services={services} />
         </BrickSection>
 
         <section className="section-y" id="about">
@@ -57,7 +139,7 @@ export default function Home() {
                     
                     <Card>
                         <CardContent className="space-y-4 font-roboto text-base">
-                            REVIEWS HERE
+                            <ReviewSlider reviews={reviews} />
                         </CardContent>
                     </Card>
                 </div>
