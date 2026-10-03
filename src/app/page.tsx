@@ -107,7 +107,7 @@ export default function Home() {
             <div className="page-container">
                 <h2 className="section-title text-white">Our Past Projects</h2>
 
-                <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
+                <div className="grid gap-20 md:grid-cols-2 lg:gap-8">
                     <ComparisonSlider beforeFileName="/construction-projects/garage-facade-before" afterFileName="/construction-projects/garage-facade-after" />
                     <ComparisonSlider beforeFileName="/construction-projects/wall-crack-before" afterFileName="/construction-projects/wall-crack-after" />
                     <ComparisonSlider beforeFileName="/construction-projects/shed-facade-before" afterFileName="/construction-projects/shed-facade-after" />
