@@ -14,7 +14,7 @@ export default function Home() {
     const services = [
         {
             name: "Construction or Installation",
-            list: ["Driveway", "Interior Wall", "Retaining Wall", "Walkway or pathway", "Brick", "Concrete or cinder block", "Stamped Concrete", "Textured Concrete", "Exterior wall", "Patio, porch or terrace", "Steps", "Asphalt", "Concrete", "Gravel", "Stone"]
+            list: ["Driveway", "Interior Wall", "Retaining Wall", "Walkway or pathway", "Brick", "Concrete or cinder block", "Stamped Concrete", "Textured Concrete", "Exterior wall", "Patio, porch or terrace", "Steps", "Asphalt", "Concrete", "Gravel", "Stone", "CMU", "Pavers", "Flatstone", "Castone", "Tile", "Plaster", "Brick Fence"]
         },
         {
             name: "Masonry/concrete removal",
@@ -22,7 +22,7 @@ export default function Home() {
         },
         {
             name: "Masonry/Concrete Repair",
-            list: ["Driveway", "Interior Wall", "Retaining Wall", "Walkway or pathway", "Brick", "Concrete or cinder block", "Stamped Concrete", "Textured Concrete", "Exterior wall", "Patio, porch or terrace", "Steps", "Asphalt", "Concrete", "Gravel", "Stone"]
+            list: ["Driveway", "Interior Wall", "Retaining Wall", "Walkway or pathway", "Brick & Restoration", "Concrete or cinder block", "Stamped Concrete", "Textured Concrete", "Exterior wall", "Patio, porch or terrace", "Steps", "Asphalt", "Concrete", "Gravel", "Stone", "Stucco", "CMU", "Pavers", "Flatstone", "Castone", "Tile", "Brick Tuckpointing", "Plaster", "Brick Fence"]
         },
         {
             name: "Masonry/Concrete Sealing",
@@ -30,7 +30,7 @@ export default function Home() {
         },
         {
             name: "Masonry/Concrete Staining",
-            list: ["Driveway", "Interior wall", "Retaining wall", "Walkway or pathway", "Exterior wall", "Patio, porch or terrace", "Steps"]
+            list: ["Driveway", "Interior wall", "Retaining wall", "Walkway or pathway", "Exterior wall", "Patio, porch or terrace", "Steps", "Whitewash"]
         },
         {
             name: "Construction Design Services",
@@ -38,7 +38,7 @@ export default function Home() {
         },
         {
             name: "Patio, Porch or Terrace Construction and Installation",
-            list: ["Asphalt", "Concrete", "Gravel", "Stone", "Brick", "Concrete or cinder block", "Stamped Concrete", "Textured Concrete"]
+            list: ["Asphalt", "Concrete", "Gravel", "Stone", "Brick", "Concrete or cinder block", "Stamped Concrete", "Textured Concrete", "Pavers", "Flatstone", "Castone", "Tile"]
         },
         {
             name: "Remodeling",
@@ -46,7 +46,7 @@ export default function Home() {
         },
         {
             name: "Structural Repair",
-            list: ["Beams or lintels", "Frame", "Posts", "Walls", "Foundation", "Joists", "Roof frame"]
+            list: ["Beams or lintels", "Frame", "Posts", "Walls & Aligning Walls", "Foundation", "Joists", "Roof frame"]
         },
         {
             name: "Miscellaneous",
