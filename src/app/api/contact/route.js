@@ -12,7 +12,7 @@ export async function POST(request) {
   }
 
   const { error } = await resend.emails.send({
-    from: "Los Tres Gudinos Website <onboarding@resend.dev>",
+    from: "Los Tres Gudinos Website <Contact@lostresgudinosmasonrycontractor.com>",
     to: COMPANY_EMAIL,
     replyTo: email,
     subject: `Contact form: ${name}`,
